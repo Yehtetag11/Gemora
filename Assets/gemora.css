@@ -1,0 +1,2394 @@
+@font-face {
+    font-family: "CenturyGothic";
+    src: url(../Assets/font/century-gothic/CenturyGothic.ttf);
+}
+
+@font-face {
+    font-family: "CenturyGothicBold";
+    src: url(../Assets/font/century-gothic/GOTHICB.TTF);
+}
+
+@font-face {
+    font-family: "CenturyGothicI";
+    src: url(../Assets/font/century-gothic/GOTHICI.TTF);
+}
+
+@font-face {
+    font-family: "CenturyGothicBI";
+    src: url(../Assets/font/century-gothic/GOTHICBI.TTF);
+}
+
+:root {
+    --sage: #3e5c52;
+    --lightsage: #596e68;
+    --cream: #faf7f2;
+    --black: #252525;
+    --tblack: #252525a6;
+    --grey: #363636d3;
+    --tgrey: #3d3d3dbb;
+    --lightgrey: #808080;
+    --darkgrey: #303030;
+    --white: #ffffff;
+    --twhite: #e9e9e9e3;
+    --bgwhite: #faf7f2;
+    --gold: #ecc886e3;
+    --red: #be3232;
+}
+
+/* navbar css start---------------------------------------------------*/
+.navbar_section {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    top: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.logo {
+    width: 130px;
+    height: max-content;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.logo a img {
+    width: 100px;
+}
+
+.option {
+    width: 50%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.option a {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    color: var(--black);
+    font-size: 18px;
+    font-weight: 200;
+    position: relative;
+    padding-bottom: 1px;
+    padding-right: 5px;
+}
+
+.option a:hover {
+    color: var(--grey);
+}
+
+.option a::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+
+.option a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.cta {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+
+.cta a img {
+    width: 25px;
+}
+
+.cta_detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+}
+
+.cta_detail img {
+    position: absolute;
+    transition: 0.2s all ease-out;
+    align-items: center;
+}
+
+.symbol_hover {
+    opacity: 0;
+}
+
+.cta_detail:hover {
+    transition: 0.2s all ease-out;
+
+    .symbol_hover {
+        opacity: 1;
+    }
+
+    .symbol_cta {
+        opacity: 0;
+    }
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--black);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+
+.cta .d-flex .btn img {
+    width: 25px;
+}
+
+.cta .d-flex .srch {
+    font-family: "CenturyGothicI";
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.cta .d-flex .srch:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.pfp {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: scale(2.5);
+    border: 1px solid var(--tgrey);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pfp:hover {
+    transition: 0.1s ease-in-out;
+    transform: scale(2.6);
+}
+
+.logout {
+    border-radius: 5px;
+    border: 1px solid var(--black);
+    padding: 5px;
+    font-family: "CenturyGothicBold";
+    text-decoration: none;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+    background-color: var(--darkgrey);
+    transition: 0.2s ease all;
+    z-index: 1;
+}
+
+.logout::before {
+    transition: 0.3s all ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background: rgb(156, 0, 0);
+    z-index: -1;
+}
+
+.logout:hover,
+button:focus {
+    color: var(--white);
+}
+
+.logout:hover::before,
+button:focus::before {
+    transition: 0.5 all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.logout:active {
+    transform: scale(0.9);
+}
+
+/* navbar css end---------------------------------------------------*/
+/* intro page start---------------------------------------------------*/
+.intro_page {
+    border-top: 1px solid var(--black);
+    width: max-content;
+    height: 700px;
+    background-image: url(../Assets/img/homepagebg2.jpg);
+    background-position: sticky;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: relative;
+}
+
+.shopnow {
+    height: max-content;
+    width: max-content;
+    padding: 30px;
+    background-color: var(--bgwhite);
+    border-radius: 5px;
+    position: absolute;
+    right: 200px;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+
+.shopnow p {
+    font-family: "CenturyGothic";
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--black);
+    font-size: 25px;
+}
+
+.shopnow a {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    color: var(--lightgrey);
+    position: relative;
+    padding-bottom: 1px;
+}
+
+.shopnow a:hover {
+    color: var(--black);
+}
+
+.shopnow a::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.shopnow a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* intro page end---------------------------------------------------*/
+/* second intro page start---------------------------------------------------*/
+.display {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display_detail {
+    position: relative;
+    width: 25%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid var(--grey);
+    transition: 0.25s all ease-out;
+}
+
+.display_detail img {
+    width: 100%;
+    position: absolute;
+    transition: 0.25s all ease-out;
+}
+
+.display_detail p {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    margin: 0;
+    color: var(--black);
+    font-family: "CenturyGothic";
+    font-size: 20px;
+    transition: 0.25s all ease-out;
+}
+
+.display-hover {
+    opacity: 0;
+}
+
+.display_detail:hover {
+    .display-hover {
+        opacity: 1;
+    }
+
+    p {
+        background-color: var(--tblack);
+        color: var(--white);
+    }
+
+    .display-normal {
+        opacity: 0;
+    }
+}
+
+/* second intro page end---------------------------------------------------*/
+/* third intro page start---------------------------------------------------*/
+.intro_third_page {
+    margin: 70px;
+    border-radius: 1px solid var(--black);
+}
+
+.intro_third_page p {
+    text-decoration: none;
+    text-align: justify;
+    color: var(--black);
+    font-family: "CenturyGothicBold";
+    font-size: 35px;
+    margin-top: 50px;
+}
+
+.bestrow {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bestrow a {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+}
+
+.bestimg {
+    width: 300px;
+    height: 300px;
+    background-image: url(../Assets/img/earing/1topearing.jpg);
+    border: 1px solid var(--lightgrey);
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    overflow: none;
+    transition: 0.3s ease-in-out;
+    margin-top: 50px;
+}
+
+.bestimg:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    background-image: url(../Assets/img/earing/1topearing_hover.jpg);
+    border: 1px solid var(--lightgrey);
+}
+
+.besttext {
+    width: max-content;
+    font-family: "CenturyGothic";
+    font-size: 18px;
+    color: var(--black);
+    margin-top: 15px;
+    position: relative;
+    margin-left: 10px;
+    padding-bottom: 1px;
+    padding-right: 5px;
+}
+
+.besttext:hover {
+    color: var(--grey);
+}
+
+.besttext::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.besttext:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.addtocart {
+    display: inline-block;
+    margin-top: 3px;
+    border: 1px solid var(--black);
+    background-color: var(--darkgrey);
+    border-radius: 5px;
+    padding: 7px;
+    color: var(--white);
+    font-family: "CenturyGothic";
+    transition: transform 0.2s ease-in-out;
+}
+
+.addtocart:hover {
+    background-color: var(--grey);
+}
+
+
+/* third intro page end---------------------------------------------------*/
+/* about us start---------------------------------------------------*/
+.abtusimg {
+    width: 100%;
+    height: 600px;
+    background-color: var(--darkgrey);
+    background-image: url(../Assets/img/Gemora4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.abtus {
+    width: 100%;
+    height: 100%;
+    font-family: "CenturyGothicI";
+    font-size: 25px;
+    padding: 150px;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--cream);
+}
+
+.abtus a {
+    width: max-content;
+    margin-top: 50px;
+    padding: 13px;
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--cream);
+    border: 1px solid var(--black);
+    border-radius: 4px;
+    background-color: var(--black);
+    transition: 0.2s ease-in-out;
+}
+
+.abtus a:hover {
+    background-color: var(--grey);
+    transition: 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+
+/* about us end---------------------------------------------------*/
+/* Sign in and regiester start---------------------------------------------------*/
+.accbg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+}
+
+.imgbg {
+    position: relative;
+    width: 60%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.imgbg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 60%;
+}
+
+.fillin {
+    width: 40%;
+    height: 100vh;
+    background-color: var(--sage);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fillin2 {
+    width: 70%;
+    height: max-content;
+    border: none;
+    border-top: 1px solid var(--lightgrey);
+    border-bottom: 1px solid var(--lightgrey);
+    border-radius: 6px;
+}
+
+.fillin2 h1 {
+    font-family: "CenturyGothicBold";
+    color: var(--white);
+    margin-top: 10px;
+}
+
+.detail {
+    margin-top: 35px;
+    font-family: "CenturyGothic";
+    color: var(--white);
+    width: 100%;
+
+}
+
+.gender {
+    margin-left: 50px;
+}
+
+.aldy {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid var(--lightgrey);
+    padding-top: 20px;
+}
+
+.going {
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid var(--white);
+    padding: 5px;
+    margin-bottom: 50px;
+    font-family: "CenturyGothicBold";
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+    background-color: transparent;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.going::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background: var(--white);
+    z-index: -1;
+}
+
+.going:hover,
+button:focus {
+    color: var(--sage);
+}
+
+.going:hover::before,
+button:focus::before {
+    transition: 0.5 all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.going:active {
+    transform: scale(0.9);
+}
+
+.first {
+    background: transparent;
+    size: 10px;
+    border: none;
+    font-family: "CenturyGothic";
+    border-bottom: 1px solid var(--white);
+    background: transparent;
+    outline: none;
+    width: 100%;
+    color: var(--white);
+}
+
+.signin {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--white);
+    padding: 5px;
+    margin-bottom: 50px;
+    font-family: "CenturyGothicBold";
+
+    font-size: 18px;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+    background-color: transparent;
+    transition: 0.2s ease all;
+    z-index: 1;
+}
+
+.signin::before {
+    transition: 0.3s all ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background: var(--white);
+    z-index: -1;
+}
+
+.signin:hover,
+button:focus {
+    color: var(--sage);
+}
+
+.signin:hover::before,
+button:focus::before {
+    transition: 0.5 all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.signin:active {
+    transform: scale(0.9);
+}
+
+.backhp {
+    display: flex;
+    width: max-content;
+    padding: 5px;
+}
+
+.backhp img {
+    width: 20px;
+    height: 20px;
+}
+
+.backhp a {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    text-align: center;
+    font-size: 13px;
+    color: var(--white);
+}
+
+/* Sign in and regiester end---------------------------------------------------*/
+/* footer start---------------------------------------------------*/
+
+.footmain {
+    background-color: var(--white);
+    width: 100%;
+    padding-top: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--white);
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid var(--black);
+}
+
+.footer-container div {
+    margin: 10px;
+}
+
+.footer_social {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: max-content;
+    cursor: default;
+}
+
+.footer_social h4, .footer_help h4, .footer_contact h4 {
+    font-family: "CenturyGothicBold";
+    cursor: default;
+}
+
+.footer_social p, .footer_contact p {
+    text-decoration: none;
+}
+
+.footer_social p span, .footer_contact p span {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 200;
+    position: relative;
+    padding-bottom: 1px;
+    padding-right: 5px;
+}
+
+.footer_social p span:hover, .footer_contact p span:hover {
+    color: var(--darkgrey);
+}
+
+.footer_social p span::after, .footer_contact p span::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .35s;
+}
+
+.footer_social p span:hover::after, .footer_contact p span:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.footer_social img, .footer_contact  img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.footer_help p  {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 200;
+    position: relative;
+    padding-bottom: 1px;
+    padding-right: 5px;
+    cursor: default;
+    width: max-content;
+}
+
+.footer_help p:hover  {
+    color: var(--darkgrey);
+}
+
+.footer_help p::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .35s;
+}
+
+.footer_help p:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.footer_social a, .footer_contact p {
+    text-decoration: none;
+}
+
+.footer_contact p span {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 200;
+    position: relative;
+    padding-bottom: 1px;
+    padding-right: 5px;
+    cursor: default;
+}
+
+.footer_contact p span:hover {
+    color: var(--darkgrey);
+}
+
+.footer_contact p span::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .35s;
+}
+
+.footer_contact p span:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.footer-bottom {
+    height: max-content;
+    background: #111;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* footer end---------------------------------------------------*/
+/* all product start---------------------------------------------------*/
+.viewallbg {
+    width: 100%;
+    height: 350px;
+    background-image: url(../Assets/img/abtus.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: var(--black);
+}
+
+.viewall_page h1 {
+    margin-top: 30px;
+    font-family: "CenturyGothic";
+    display: flex;
+    justify-content: center;
+}
+
+.allproduct {
+    font-family: "CenturyGothicBold";
+}
+
+.allproduct img {
+    width: 100%;
+    height: 100%;
+}
+
+.allrow {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.allrow a {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+}
+
+.allimg {
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--lightgrey);
+    border-radius: 5px;
+    overflow: none;
+    transition: 0.3s ease-in-out;
+    margin-top: 50px;
+}
+
+.allimg:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    border: 1px solid var(--lightgrey);
+}
+
+.alltext {
+    width: max-content;
+    font-family: "CenturyGothic";
+    font-size: 17px;
+    color: var(--black);
+    margin-top: 15px;
+    position: relative;
+    margin-left: 10px;
+    padding-bottom: 1px;
+    padding-right: 5px;
+    cursor: context-menu;
+}
+
+.alltext:hover {
+    color: var(--grey);
+}
+
+.alltext::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.alltext:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* all product end---------------------------------------------------*/
+/* add to cart start---------------------------------------------------*/
+/* General Container */
+.atcbg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    height: max-content;
+    background-image: url(../Assets/img/abtus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.addtocartbg {
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    color: var(black);
+}
+
+.addtocartbg2 {
+    width: 100%;
+    height: max-content;
+    min-height: 300px;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border-radius: 12px;
+    border: 1px solid var(--black);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addtocartbg2 h1 {
+    font-family: "CenturyGothicBold";
+    font-size: 24px;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.addtitle {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18% 16%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    color: var(--black);
+    padding: 12px 0;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid var(--black);
+}
+
+.addrow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--black);
+}
+
+.addrow span {
+    flex: 1;
+    text-align: center;
+}
+
+.remove {
+    flex: 0.5;
+    text-align: center;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #ff6f61;
+    background-color: #ff6f61;
+    padding: 7px;
+    border-radius: 6px;
+}
+
+.remove:hover {
+    background-color: darkred;
+    color: white;
+}
+
+
+.addrow img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.addproduct,
+.addname,
+.addmaterial,
+.addcategory,
+.addprice {
+    text-align: center;
+    font-size: 16px;
+    font-family: "CenturyGothic";
+    color: var(--black);
+
+}
+
+.sum {
+    width: 100%;
+    height: max-content;
+    min-height: 300px;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid var(--black);
+    font-family: "CenturyGothic";
+    color: var(--black);
+    position: sticky;
+    top: 80px;
+    z-index: 1000;
+}
+
+.sum p {
+    font-family: "CenturyGothicBold";
+    font-size: 30px;
+}
+
+.sum2 {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sum2 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sum2 th,
+.sum2 td {
+    border: 1px solid var(--darkgrey);
+    padding: 10px;
+    text-align: left;
+}
+
+.sum2 th {
+    background-color: var(--darkgrey);
+    color: var(--white);
+    font-weight: bold;
+}
+
+
+.sum h2 {
+    font-size: 24px;
+    color: var(--black);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.deli {
+    font-family: "CenturyGothic";
+    font-size: 18px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid var(--black);
+    margin-bottom: 30px;
+}
+
+.totalcost {
+    font-family: "CenturyGothic";
+}
+
+.checkout {
+    border: 1px solid var(--black);
+    padding: 9px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: #ff6f61;
+    transition: 0.1s ease-in-out;
+}
+
+.checkout:hover {
+    border: 1px solid var(--black);
+    padding: 9px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: darkred;
+    transition: 0.1s ease-in-out;
+}
+
+.finaltotal {
+    display: flex;
+    justify-content: flex-end; /* Aligns to the right */
+    align-items: center;
+    font-size: 18px;
+    font-family: "CenturyGothic";
+    margin-top: 10px; /* Adjust spacing */
+    padding-right: 20px; /* Aligns with table columns */
+}
+
+.finaltotal span{
+    font-family: "CenturyGothicBold";
+    margin-left: 5px;
+    color: darkred;
+}
+
+
+.backe {
+    margin-top: 30px;
+}
+
+.backe a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.backe a:hover {
+    text-decoration: none;
+    color: var(--grey);
+}
+
+.backe img {
+    width: 20px;
+}
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.qty-btn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background: #ff6f61;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    background: darkred;
+}
+
+.qty-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid var(--black);
+    background: transparent;
+    font-size: 16px;
+    font-family: "CenturyGothic";
+    color: var(--black);
+    border-radius: 4px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    color: darkred;
+}
+
+
+/* add to cart end---------------------------------------------------*/
+
+/* product detail start---------------------------------------------------*/
+.productde {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../Assets/img/abtus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.pdbg {
+    margin-top: 70px;
+    width: 75%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--darkgrey);
+    border-radius: 2%;
+    margin: 100px;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+
+.pd1 {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.pd1 img {
+    width: 500px;
+    border: 1px solid var(--black);
+    border-radius: 2%;
+}
+
+.pd2 {
+    width: 40%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-bottom: 70px;
+
+}
+
+.pdname {
+    font-family: "CenturyGothicBold";
+    font-size: 40px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 2px solid var(--black);
+}
+
+.pdprice {
+    font-family: "CenturyGothicBold";
+    font-size: 23px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.pdprice2 {
+    width: 50%;
+    height: max-content;
+    font-family: "CenturyGothicBold";
+    font-size: 25px;
+    padding-left: 20px;
+    border-bottom: 2px dotted var(--black);
+    color: var(--red);
+}
+
+.matecate {
+    display: flex;
+}
+
+.pdmaterial {
+    width: 50%;
+    font-family: "CenturyGothicBold";
+    font-size: 23px;
+    padding-left: 20px;
+}
+
+.pdmaterial2 {
+    width: 50%;
+    font-family: "CenturyGothic";
+    font-size: 21px;
+    padding-left: 20px;
+    border-bottom: 2px dotted var(--black);
+}
+
+.pdcategory {
+    font-family: "CenturyGothicBold";
+    font-size: 23px;
+    padding-left: 20px;
+}
+
+.pdcategory2 {
+    width: 50%;
+    font-family: "CenturyGothic";
+    font-size: 21px;
+    padding-left: 20px;
+    border-bottom: 2px dotted var(--black);
+}
+
+.pddes {
+    font-family: "CenturyGothicBold";
+    font-size: 23px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.pddes2 {
+    width: 50%;
+    height: max-content;
+    font-family: "CenturyGothic";
+    font-size: 21px;
+    padding-left: 20px;
+    margin-left: 20px;
+    border-bottom: 2px dotted var(--black);
+}
+
+.pdlink {
+    display: flex;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.pdlink a {
+    text-decoration: none;
+    width: 50%;
+    display: inline-block;
+    margin-top: 3px;
+    border: 1px solid var(--black);
+    background-color: var(--darkgrey);
+    border-radius: 5px;
+    padding: 7px;
+    color: var(--white);
+    font-family: "CenturyGothic";
+    transition: transform 0.2s ease-in-out;
+}
+
+.pdlink a:hover {
+    background-color: var(--grey);
+}
+
+.bte {
+    width: 40%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.bte img {
+    width: 25px;
+    height: 25px;
+}
+
+.bte a {
+    text-decoration: none;
+    font-family: "CenturyGothic";
+    color: var(--black);
+    font-size: 17px;
+    font-weight: 200;
+    position: relative;
+    padding-bottom: 1px;
+    padding-right: 5px;
+}
+
+.bte a:hover {
+    color: var(--grey);
+}
+
+.bte a::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--black);
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+
+.bte a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* product detail end---------------------------------------------------*/
+
+/* process to checkout start---------------------------------------------------*/
+.ptcobg {
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    color: var(black);
+}
+
+.ptcobg2 {
+    width: 60%;
+    height: max-content;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border-radius: 12px;
+    border: 1px solid var(--black);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ptcobg2 h1 {
+    font-family: "CenturyGothicBold";
+    font-size: 24px;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.ptcotitle {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    color: var(--black);
+    padding: 12px 0;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid var(--black);
+}
+
+.ptcoinfo {
+    width: 40%;
+    height: max-content;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    border-radius: 12px;
+    border: 1px solid var(--black);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 85px;
+    z-index: 1000;
+}
+
+.ptcoinfoname1 h5 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: "CenturyGothicBold";
+}
+
+.ptcousername {
+    position: relative;
+    width: 60%;
+    max-width: 400px;
+    font-family: "CenturyGothic";
+}
+
+.ptcoinput {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid var(--grey);
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+.ptcoinput:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 5px rgba(255, 38, 0, 0.5);
+}
+
+.ptcoinfoname2 {
+    margin-top: 10px;
+}
+
+.ptcoinfoname2 h5 {
+    font-family: "CenturyGothicBold";
+}
+
+.ptcoinfoname3 {
+    margin-top: 10px;
+}
+
+.ptcoinfoname3 h5 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: "CenturyGothicBold";
+}
+
+.ptcoaddress {
+    display: flex;
+    justify-content: space-between;
+    font-family: "CenturyGothic";
+}
+
+.ptcoinfoname3 input {
+    width: 49%;
+    padding: 10px 12px;
+    border: 2px solid var(--grey);
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+
+.ptcoinfoname3 input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 5px rgba(255, 38, 0, 0.5);
+}
+
+.ptcoinfoname4 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.ptcoinfoname4 h5 {
+    font-family: "CenturyGothicBold";
+}
+
+.confirm {
+    display: flex;
+    justify-content: center;
+}
+
+.confirm button {
+    border: 1px solid var(--black);
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: #ff6f61;
+    transition: 0.1s ease-in-out;
+    font-family: "CenturyGothic";
+    align-self: center;
+    display: block;
+    text-align: center;
+    width: 90%;
+}
+
+.confirm button:hover {
+    border: 1px solid var(--black);
+    padding: 8px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--white);
+    background-color: darkred;
+    transition: 0.1s ease-in-out;
+}
+
+.confirmation-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    height: max-content;
+    /* background-color: var(--cream); */
+    background-image: url(../Assets/img/abtus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+}
+
+.confirmation-box {
+    background: transparent;
+    backdrop-filter: blur(30px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+.confirmation-box h1 {
+    font-family: "CenturyGothicBold";
+    color: #28a745;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.confirmation-box p {
+    font-family: "CenturyGothic";
+    font-size: 16px;
+    color: #333;
+}
+
+.order-summary {
+    border-top: 2px solid var(--black);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.order-summary h2 {
+    font-family: "CenturyGothicBold";
+}
+
+.order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.order-summary th {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "CenturyGothic";
+    padding: 10px;
+    border: 1px solid var(--black);
+    text-align: center;
+}
+
+.order-summary td {
+    font-family: "CenturyGothic";
+    padding: 10px;
+    border: 1px solid var(--black);
+    text-align: center;
+}
+
+.order-summary img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.total-row td {
+    font-size: 18px;
+    color: #d9534f;
+}
+
+.customer-info {
+    margin-top: 20px;
+    text-align: left;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+.customer-info p {
+    margin: 5px 0;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.back-shop {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    background: var(--black);
+    color: white;
+    margin-right: 10px;
+    width: 50%;
+}
+
+.back-shop:hover {
+    opacity: 0.8;
+}
+/* about us start---------------------------------------------------*/
+/* Import AOS (Animate on Scroll) */
+@import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(to right, #f9f9f9, #eaeaea);
+}
+
+/* Hero Section */
+.hero {
+    background: url('../Assets/img/Gemora2_white.jpg') center/cover no-repeat fixed;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cream);
+    position: relative;
+    border-bottom: 1px solid var(--black);
+}
+
+.hero h1, .hero p {
+    font-family: "CenturyGothicBold";
+}
+
+.hero .overlay {
+    background: rgba(41, 41, 41, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    animation: fadeInUp 1.8s ease-in-out;
+}
+
+/* Fade-in Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* About Section */
+.about, .founder, .commitment {
+    padding: 80px 10%;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.about .container, .founder .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.founder h2 {
+    font-family: "CenturyGothicBold";
+}
+
+.founder {
+    display: flex;
+    flex-direction: column;
+}
+
+.about .text-content, .founder .text-content {
+    flex: 1;
+    text-align: left;
+    transition: transform 0.5s ease-in-out;
+    font-family: "CenturyGothic";
+}
+
+.text-content h2 {
+    font-family: "CenturyGothicBold";
+}
+
+.text-content p {
+    font-family: "CenturyGothic";
+}
+
+.about .image-content img, .founder .image-content img {
+    flex: 1;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about .image-content img:hover, .founder .image-content img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Gallery */
+.gallery {
+    text-align: center;
+    padding: 50px 10%;
+    background: var(--cream);
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: "CenturyGothicBold";
+}
+
+.gallery-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;    
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-family: "CenturyGothicBOLD";
+    color: #333;
+}
+
+/* Commitment Section */
+/* Commitment & Sustainability Section */
+.commitment-sustainability, .sustainability-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 50px;
+}
+
+.commitment-content, .sustainability-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.commitment-content h2, .sustainability-content h2 {
+    font-size: 2.2rem;
+    font-family: "CenturyGothicBold";
+    color: var(--black);
+    margin-bottom: 15px;
+}
+
+.commitment-content p, .sustainability-content p {
+    font-size: 1.2rem;
+    font-family: "CenturyGothic";
+    color: #555;
+}
+
+.commitment-image, .sustainability-image {
+    flex: 1;
+    text-align: center;
+}
+
+.commitment-image img, .sustainability-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease-in-out;
+}
+
+.commitment-image img:hover, .sustainability-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .commitment-sustainability, .sustainability-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .commitment-image img, .sustainability-image img {
+        max-width: 100%;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .about .container, .founder-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about .text-content, .founder-container p {
+        text-align: center;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #f4f1eb, #fff);
+    padding: 80px 10%;
+    gap: 50px;
+}
+
+.mission, .vision {
+    flex: 1;
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.mission {
+    background-image: url(../Assets/img/mission.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.vision {
+    background-image: url(../Assets/img/vision.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mission:hover, .vision:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.mission h2 {
+    font-size: 1.8rem;
+    color: var(--cream);
+    font-family: "CenturyGothicBold";
+    margin: 15px 0;
+}
+
+.vision h2 {
+    font-size: 1.8rem;
+    color: var(--darkgrey);
+    font-family: "CenturyGothicBold";
+    margin: 15px 0;
+}
+
+.mission p {
+    font-size: 1.2rem;
+    font-family: "CenturyGothic";
+    color: var(--cream);
+}
+
+.vision p {
+    font-size: 1.2rem;
+    font-family: "CenturyGothic";
+    color: var(--darkgrey);
+}
+
+
+/* Heading Styling */
+.oh {
+    font-family: "CenturyGothicBold";
+    font-size: 40px;
+}
+
+.order-history-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-history-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.order-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.order-history-table thead {
+    background-color: var(--black);
+    color: #fff;
+}
+
+.order-history-table th, .order-history-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--black);
+}
+
+.order-history-table td {
+    color: #555;
+}
+
+.order-history-table td:last-child {
+    font-weight: bold;
+    color: darkred;
+}
+
+
+/* ===================================================================
+   RESPONSIVE OVERRIDES (added)
+   Kept at the end of the file on purpose so these rules win over the
+   earlier fixed-width desktop styles at the same specificity.
+   =================================================================== */
+
+/* Safety net: stop any element from forcing horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+img {
+    max-width: 100%;
+}
+
+/* ---------- Hamburger button (hidden on desktop) ---------- */
+.navToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 15px;
+    z-index: 200;
+}
+
+.navToggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--black);
+    transition: 0.3s ease;
+}
+
+.navToggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navToggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navToggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- ≤1200px: tighten up before things start breaking ---------- */
+@media (max-width: 1200px) {
+    .option {
+        width: 60%;
+    }
+
+    .cta {
+        width: 38%;
+    }
+
+    .display_detail {
+        width: 30%;
+    }
+}
+
+/* ---------- ≤992px: collapse nav into a slide-in menu ---------- */
+@media (max-width: 992px) {
+    .navToggle {
+        display: flex;
+    }
+
+    .navbar_section {
+        padding: 0 10px;
+        height: 60px;
+    }
+
+    .logo {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .option {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: var(--bgwhite);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 25px;
+        padding-top: 30px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        z-index: 150;
+    }
+
+    .option.active {
+        transform: translateX(0);
+    }
+
+    .cta {
+        width: auto;
+        gap: 8px;
+    }
+
+    .cta .d-flex .srch {
+        width: 90px;
+    }
+
+    /* Hero */
+    .intro_page {
+        width: 100%;
+        height: 500px;
+    }
+
+    .shopnow {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    /* Category tiles row -> 2 columns */
+    .display {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .display_detail {
+        width: 47%;
+        height: 260px;
+    }
+
+    /* Best sellers row */
+    .bestrow {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .bestimg {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* About us */
+    .abtus {
+        padding: 60px 30px;
+        font-size: 20px;
+    }
+
+    /* Sign in / register: stack image and form */
+    .accbg {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .imgbg {
+        width: 100%;
+        height: 220px;
+    }
+
+    .fillin {
+        width: 100%;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .fillin2 {
+        width: 90%;
+    }
+
+    /* Product detail: stack image and info */
+    .pdbg {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: auto;
+        margin: 90px auto 40px;
+    }
+
+    .pd1 img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .pd2 {
+        width: 90%;
+        margin-left: 0;
+    }
+
+    /* Cart / order history */
+    .addtocartbg, .ptcobg {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .ptcobg2, .ptcoinfo {
+        width: 100%;
+    }
+
+    .ptcoinfo {
+        position: static;
+        top: auto;
+    }
+
+    .addtitle, .ptcotitle, .addrow {
+        font-size: 13px;
+    }
+}
+
+/* ---------- ≤768px: phones ---------- */
+@media (max-width: 768px) {
+    .allimg, .bestimg {
+        width: 45%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .allrow {
+        gap: 12px;
+    }
+
+    .display_detail {
+        width: 100%;
+        height: 240px;
+    }
+
+    .productde {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    /* Cart table columns get tight; let it scroll instead of squashing text */
+    .addtocartbg2, .ptcobg2 {
+        overflow-x: auto;
+    }
+
+    .addtitle, .ptcotitle {
+        min-width: 480px;
+    }
+
+    .addrow {
+        min-width: 480px;
+    }
+}
+
+/* ---------- ≤480px: small phones ---------- */
+@media (max-width: 480px) {
+    .logo a img {
+        width: 80px;
+    }
+
+    .option a {
+        font-size: 16px;
+    }
+
+    .allimg, .bestimg {
+        width: 100%;
+    }
+
+    .shopnow {
+        width: 90%;
+        padding: 18px;
+    }
+
+    .abtus {
+        padding: 40px 15px;
+        font-size: 17px;
+    }
+
+    .fillin2 {
+        width: 95%;
+    }
+}
